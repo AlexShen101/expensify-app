@@ -10,7 +10,7 @@
     "dev-server": "webpack serve --mode development",
     "test": "jest",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "yarn build:prod"
   },
   "dependencies": {
     "@babel/cli": "^7.14.5",
