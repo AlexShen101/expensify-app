@@ -54,9 +54,6 @@ module.exports = (env, argv) => {
                 filename: 'styles.css'
             })
         ],
-
-        watch: true,
-
         mode: 'development',
         devtool: isProduction ? 'source-map' : 'inline-cheap-module-source-map',
         devServer: {
