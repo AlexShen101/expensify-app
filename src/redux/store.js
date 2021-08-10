@@ -2,7 +2,6 @@ import { createStore, combineReducers } from 'redux';
 
 import expensesReducer from './expenses/ExpensesReducer';
 import filtersReducer from './filters/FiltersReducer';
-import getVisibleExpenses from './GetVisibleExpenses';
 
 const store = createStore(
     combineReducers({ expenses: expensesReducer, filters: filtersReducer }),

@@ -7,7 +7,7 @@ const ExpenseListItem = ({ description, amount, id, createdAt }) => {
 
     return (
         <div>
-            <p>{`${description}: ${amount}`}</p>
+            <p>{`${description}: $${amount}`}</p>
             <p>Created At: {date}</p>
             <button><Link to={`/edit/${id}`}>Edit</Link></button>
         </div>

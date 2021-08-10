@@ -1,8 +1,20 @@
-const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
+const getVisibleExpenses = (
+    expenses = {},
+    {
+        text = undefined,
+        sortBy = undefined,
+        startDate = undefined,
+        endDate = undefined
+    } = {}) => {
+
+
+    if (expenses.length === 0) return [];
+
     let filteredExpenses = expenses.filter((expense) => {
+
         const startDateMatch = startDate ? expense.createdAt.isSameOrAfter(startDate, 'day') : true;
         const endDateMatch = endDate ? expense.createdAt.isSameOrBefore(endDate, 'day') : true;
-        const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
+        const textMatch = expense && text ? expense.description.toLowerCase().includes(text.toLowerCase()) : true;
 
         return startDateMatch && endDateMatch && textMatch;
     });
