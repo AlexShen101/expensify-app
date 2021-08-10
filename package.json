@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public --watch",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "dev-server": "webpack serve --mode development",
@@ -21,7 +20,6 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "express": "^4.17.1",
-    "live-server": "^1.1.0",
     "mini-css-extract-plugin": "^2.2.0",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
@@ -36,11 +34,13 @@
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "uuid": "^8.3.2",
-    "webpack": "^5.44.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack": "^5.44.0"
   },
   "devDependencies": {
+    "chalk": "^4.1.2",
     "jest": "^27.0.6",
-    "webpack-cli": "^4.7.2"
+    "react-test-renderer": "^17.0.2",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

@@ -1,6 +1,3 @@
 node_modules/
-bundle.js
-bundle.js.map
-styles.css
-styles.css.map
-public/bundle.js.LICENSE.txt
+public/dist/ 
+*.log
