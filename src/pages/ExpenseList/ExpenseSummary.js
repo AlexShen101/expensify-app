@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import getVisibleExpenses from '../../redux/GetVisibleExpenses';
+import numeral from 'numeral';
+import getVisibleExpenses from '@Redux/GetVisibleExpenses';
 
 const ExpenseSummary = (props) => {
 
-    let numberOfExpenses = getVisibleExpenses(props.expenses, props.filters).length
+    let numberOfExpenses = props.visibleExpenses.length
 
-    let ExpensesTotal = props.expenses.length !== 0 ? getVisibleExpenses(props.expenses, props.filters).reduce(((total, expense) => total + expense.amount), 0) : 0;
+    let ExpensesTotal = props.visibleExpenses.reduce(((total, expense) => total + expense.amount), 0);
 
 
     return (
         <div>
             <h3>Your Expense Summary:</h3>
             <p>Your have {numberOfExpenses} expense{numberOfExpenses === 1 ? '' : 's'}.</p>
-            <p>The total amount for your expenses is: ${ExpensesTotal}.</p>
+            <p>The total amount for your expenses is: {numeral(ExpensesTotal).format('$0,0.00')}.</p>
         </div>
 
     )
@@ -21,8 +22,7 @@ const ExpenseSummary = (props) => {
 
 const mapStateToProps = (state) => (
     {
-        expenses: state.expenses,
-        filters: state.filters
+        visibleExpenses: getVisibleExpenses(state.expenses, state.filters)
     }
 )
 

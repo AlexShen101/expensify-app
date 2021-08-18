@@ -14,7 +14,8 @@ module.exports = (env, argv) => {
         resolve: {
             alias: {
                 '@Components': path.resolve(__dirname, 'src/components/'),
-                '@Pages': path.resolve(__dirname, 'src/pages/')
+                '@Pages': path.resolve(__dirname, 'src/pages/'),
+                '@Redux': path.resolve(__dirname, 'src/redux/'),
             }
         },
 

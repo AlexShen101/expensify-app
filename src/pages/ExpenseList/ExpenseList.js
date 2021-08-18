@@ -1,26 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import getVisibleExpenses from '../../redux/GetVisibleExpenses';
 import ExpenseListItem from './ExpenseListItem';
+import getVisibleExpenses from '@Redux/GetVisibleExpenses';
 
-const ExpenseList = (props) => {
-    return (
-        <div>
-            <h1>The Expense List</h1>
-            {getVisibleExpenses(props.expenses, props.filters).map((expense) => {
-                return (
-                    <ExpenseListItem key={expense.id} {...expense} />
-                )
-            })}
-        </div>
-    )
-}
-
-const mapStateToProps = (state) => (
+export const ExpenseList = (props) => (
+  <div>
     {
-        expenses: state.expenses,
-        filters: state.filters
+      props.visibleExpenses.length === 0 ? (
+        <p>No expenses</p>
+      ) : (
+        props.visibleExpenses.map((expense) => {
+          return <ExpenseListItem key={expense.id} {...expense} />;
+        })
+      )
     }
-)
+  </div>
+);
+
+const mapStateToProps = (state) => {
+  return {
+    visibleExpenses: getVisibleExpenses(state.expenses, state.filters)
+  };
+};
 
 export default connect(mapStateToProps)(ExpenseList);
