@@ -97,6 +97,7 @@ const startSetExpenses = () => {
                     })
                 })
 
+                console.log('\n\nExpenses recieved on startup:')
                 console.log(expensesArray)
 
                 dispatch(setExpenses(expensesArray))

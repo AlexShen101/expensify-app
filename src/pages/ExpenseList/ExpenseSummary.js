@@ -7,7 +7,9 @@ const ExpenseSummary = (props) => {
 
     let numberOfExpenses = props.visibleExpenses.length
 
-    let ExpensesTotal = props.visibleExpenses.reduce(((total, expense) => total + expense.amount), 0);
+    let ExpensesTotal = props.visibleExpenses.reduce(((total, expense) => {
+        return total + (expense.amount / 100)
+    }), 0)
 
 
     return (

@@ -11,7 +11,7 @@ const ExpenseListItem = ({ id, description, amount, createdAt, note }) => {
         <h3>{description}</h3>
       </Link>
       <p> {`
-        ${numeral(amount).format('$0,0.00')}
+        ${numeral(amount / 100).format('$0,0.00')}
         , due at 
         ${moment(createdAt).format('MM/DD/YYYY')}
         `}
