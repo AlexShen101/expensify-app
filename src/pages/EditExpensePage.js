@@ -6,12 +6,12 @@ import { startEditExpense, startRemoveExpense } from '../redux/expenses/ExpenseA
 const EditExpensePage = (props) => {
   const onSubmit = (expense) => {
     props.startEditExpense(props.expense.id, expense);
-    props.history.push('/');
+    props.history.push('/dashboard');
   }
 
   const onRemove = () => {
     props.startRemoveExpense(props.expense.id);
-    props.history.push('/');
+    props.history.push('/dashboard');
   }
 
   return (

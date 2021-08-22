@@ -1,5 +1,5 @@
 import database from '../../firebase/firebase'
-export { startAddExpense, startEditExpense, startRemoveExpense, startSetExpenses };
+export { startAddExpense, startEditExpense, startRemoveExpense, startSetExpenses, setExpenses };
 
 
 /*
@@ -16,11 +16,12 @@ const addExpense = (expense) => {
 }
 
 const startAddExpense = (expenseData) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
 
         let expense = expenseData
 
-        database.ref('expenses')
+        database.ref(`users/${uid}/expenses`)
             .push(expense)
             .then((ref) => {
                 dispatch(addExpense({
@@ -44,9 +45,10 @@ const editExpense = (id, updates) => ({
 
 const startEditExpense = (id, updates) => {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
 
-        database.ref('expenses/' + id)
+        database.ref(`users/${uid}/expenses/${id}`)
             .update(updates)
             .then(() => {
                 dispatch(editExpense(id, updates));
@@ -64,9 +66,11 @@ const removeExpense = (id) => {
 
 const startRemoveExpense = (id) => {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
 
-        database.ref('expenses/' + id)
+        const uid = getState().auth.uid;
+
+        database.ref(`users/${uid}/expenses/${id}`)
             .remove()
             .then(() => {
                 dispatch(removeExpense(id));
@@ -83,9 +87,10 @@ const setExpenses = (expenses) => {
 
 const startSetExpenses = () => {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
 
-        return database.ref('expenses')
+        return database.ref(`users/${uid}/expenses`)
             .once('value')
             .then((snapshot) => {
                 let expensesArray = []
@@ -96,9 +101,6 @@ const startSetExpenses = () => {
                         ...childSnapshot.val()
                     })
                 })
-
-                console.log('\n\nExpenses recieved on startup:')
-                console.log(expensesArray)
 
                 dispatch(setExpenses(expensesArray))
             })
