@@ -1,0 +1,36 @@
+.btn {
+    padding: 15px;
+    border: none;
+    font-size: $font-small;
+}
+
+.btn__no-padding {
+    padding: 0px;
+    border: none;
+    font-size: $font-small;
+}
+
+.btn__login {
+    background: $mid-green;
+    border-radius: 40px;
+    width: 100%;
+}
+
+.btn__logout {
+    background: transparent;
+}
+
+.btn--centered {
+    margin: auto;
+}
+
+.btn__remove {
+    @extend .btn;
+    border-radius: 40px;
+    background: $mid-green;
+    min-width: 200px;
+}
+
+.btn__submit {
+    @extend .btn__remove;
+}

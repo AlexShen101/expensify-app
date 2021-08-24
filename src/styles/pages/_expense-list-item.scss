@@ -1,0 +1,65 @@
+.expense-list-item {
+    background: $light-gray;
+    border-radius: 15px;
+
+    width: fit-content;
+    min-width: 690px;
+
+    @media (max-width: 705px) {
+        min-width: 400px;
+    }
+
+    padding: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-right: 0;
+
+    display: flex;
+    
+
+    h3 {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        font-size: 1.25em;
+    }
+
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    transition: background .6s ease;
+    &:hover {
+        background: darken($light-gray, 5%);
+    }
+}
+
+.expense-list-item__info {
+    max-width: 525px;
+
+    @media (max-width: 705px) {
+        max-width: 225px;
+    }
+
+    overflow: auto;
+}
+
+.expense-list-item__amount {
+    height: max-content;
+    margin-left: auto;
+    margin-right: 0px;
+    align-self: center;
+
+    p {
+        font-weight: bold;
+        font-size: 1.25em;
+        color: black;
+        margin: auto;
+    }
+}
+
+.expense-list-item__link {
+    text-decoration: none;
+    color: black;
+}
+

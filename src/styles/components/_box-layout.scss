@@ -1,0 +1,20 @@
+.box-layout {
+    background: white;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-layout__box {
+    height: 20vh;
+    padding: 20px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.box-layout__container {
+    padding: 1rem;
+    width: fit-content;
+}

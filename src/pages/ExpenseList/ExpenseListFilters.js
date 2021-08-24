@@ -32,15 +32,17 @@ const ExpenseListFilters = (props) => {
   }
 
   return (
-    <div>
+    <div className="box-layout__container">
       <input
         type="text"
         value={props.filters.text}
         onChange={onTextChange}
+        className="text-input"
       />
       <select
         value={props.filters.sortBy}
         onChange={onSortChange}
+        className="select"
       >
         <option value="date">Date</option>
         <option value="amount">Amount</option>

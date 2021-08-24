@@ -15,12 +15,13 @@ const EditExpensePage = (props) => {
   }
 
   return (
-    <div>
+    <div className="box-layout__container">
+      <h1 className="page-title">Editing Expense</h1>
       <ExpenseForm
         expense={props.expense}
         onSubmit={onSubmit}
       />
-      <button onClick={onRemove}>Remove</button>
+      <button onClick={onRemove} className="btn__remove">Remove</button>
     </div>
   )
 }

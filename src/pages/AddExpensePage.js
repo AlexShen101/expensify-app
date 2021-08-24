@@ -12,10 +12,12 @@ const AddExpensePage = (props) => {
 
   return (
     <div>
-      <h1>Add Expense</h1>
-      <ExpenseForm
-        onSubmit={onSubmit}
-      />
+      <div className="box-layout__container">
+        <h1 className="page-title">Add Expense</h1>
+        <ExpenseForm
+          onSubmit={onSubmit}
+        />
+      </div>
     </div>
   )
 }

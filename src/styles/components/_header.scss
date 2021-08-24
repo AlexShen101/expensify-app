@@ -1,0 +1,28 @@
+.header__bar {
+    padding: 1rem;
+    padding-bottom: 2rem;
+
+    h1 {
+        margin-top: 0px;
+        margin-right: 8rem;
+        display: inline;
+    }
+}
+
+.header__links {
+    display: block;
+
+    @media (min-width: 680px) {
+        display: inline;
+    }
+
+    width: 100%;
+    align-self: center;
+
+    a {
+        margin-right: 2rem;
+        font-style: normal;
+        text-decoration: none;
+        color: black;
+    }
+}

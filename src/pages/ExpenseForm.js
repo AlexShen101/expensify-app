@@ -49,8 +49,6 @@ const ExpenseForm = (props) => {
     } else {
       setError('')
 
-      console.log(createdAt)
-
       props.onSubmit({
         description,
         amount: parseInt(amount * 100),
@@ -62,40 +60,41 @@ const ExpenseForm = (props) => {
 
 
   return (
-    <div>
-      {error && <p>{error}</p>}
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          placeholder="Description"
-          autoFocus
-          value={description}
-          onChange={onDescriptionChange}
-        />
-        <input
-          type="text"
-          placeholder="Amount"
-          value={amount}
-          onChange={onAmountChange}
-        />
-        <SingleDatePicker
-          date={createdAt}
-          onDateChange={onDateChange}
-          focused={calendarFocused}
-          onFocusChange={onFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-        />
-        <br></br>
-        <textarea
-          placeholder="Add a note for your expense (optional)"
-          value={note}
-          onChange={onNoteChange}
-        >
-        </textarea>
-        <button>{id === '' ? 'Add Expense' : 'Edit Expense'}</button>
-      </form>
-    </div>
+    <form onSubmit={onSubmit} className="expense-form">
+      {error && <p className="expense-form__error">{error}</p>}
+      <input
+        type="text"
+        placeholder="Description"
+        autoFocus
+        value={description}
+        onChange={onDescriptionChange}
+        className="text-input"
+      />
+      <input
+        type="text"
+        placeholder="Amount"
+        value={amount}
+        onChange={onAmountChange}
+        className="text-input"
+      />
+      <SingleDatePicker
+        date={createdAt}
+        onDateChange={onDateChange}
+        focused={calendarFocused}
+        onFocusChange={onFocusChange}
+        numberOfMonths={1}
+        isOutsideRange={() => false}
+      />
+      <br></br>
+      <textarea
+        placeholder="Add a note for your expense (optional)"
+        value={note}
+        onChange={onNoteChange}
+        className="textarea"
+      >
+      </textarea>
+      <button className="btn btn__submit">{id === '' ? 'Add Expense' : 'Edit Expense'}</button>
+    </form>
   )
 }
 

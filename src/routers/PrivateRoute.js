@@ -30,9 +30,6 @@ export const PrivateRoute = ({
 
 
 const mapStateToProps = ((state) => {
-    console.log('state.auth.uid:' + state.auth.uid)
-    console.log(typeof (state.auth.uid))
-    console.log(!!state.auth.uid)
 
     return {
         isAuthenticated: !!state.auth.uid

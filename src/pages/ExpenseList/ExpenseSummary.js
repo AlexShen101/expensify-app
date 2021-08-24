@@ -13,10 +13,12 @@ const ExpenseSummary = (props) => {
 
 
     return (
-        <div>
-            <h3>Your Expense Summary:</h3>
-            <p>Your have {numberOfExpenses} expense{numberOfExpenses === 1 ? '' : 's'}.</p>
-            <p>The total amount for your expenses is: {numeral(ExpensesTotal).format('$0,0.00')}.</p>
+        <div className="box-layout__container">
+            <div className="expense-summary">
+                <h3>Your Expense Summary:</h3>
+                <p>Your have {numberOfExpenses} expense{numberOfExpenses === 1 ? '' : 's'}.</p>
+                <p>The total amount for your expenses is: {numeral(ExpensesTotal).format('$0,0.00')}.</p>
+            </div>
         </div>
 
     )
