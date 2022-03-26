@@ -12,7 +12,6 @@ const ExpenseForm = (props) => {
   let [calendarFocused, setCalendarFocused] = useState(false)
   let [error, setError] = useState('')
 
-
   const onDescriptionChange = (e) => {
     const description = e.target.value;
     setDescription(description)

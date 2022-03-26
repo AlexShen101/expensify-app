@@ -18,3 +18,8 @@
     padding: 1rem;
     width: fit-content;
 }
+
+.filter-pages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

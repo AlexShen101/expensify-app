@@ -32,33 +32,41 @@ const ExpenseListFilters = (props) => {
   }
 
   return (
+
     <div className="box-layout__container">
-      <input
-        type="text"
-        value={props.filters.text}
-        onChange={onTextChange}
-        className="text-input"
-      />
-      <select
-        value={props.filters.sortBy}
-        onChange={onSortChange}
-        className="select"
-      >
-        <option value="date">Date</option>
-        <option value="amount">Amount</option>
-      </select>
-      <DateRangePicker
-        startDate={props.filters.startDate}
-        startDateId='startDateId'
-        endDate={props.filters.endDate}
-        endDateId='endDateId'
-        onDatesChange={onDatesChange}
-        focusedInput={calendarFocused}
-        onFocusChange={onFocusChange}
-        showClearDates={true}
-        numberOfMonths={1}
-        isOutsideRange={() => false}
-      />
+      <h3>Expense filters:</h3>
+      <div className="filter-pages">
+        <p>Filter by name:</p>
+        <p>Sort by:</p>
+        <p>Filter by date range:</p>
+
+        <input
+          type="text"
+          value={props.filters.text}
+          onChange={onTextChange}
+          className="text-input"
+        />
+        <select
+          value={props.filters.sortBy}
+          onChange={onSortChange}
+          className="select"
+        >
+          <option value="date">Date</option>
+          <option value="amount">Amount</option>
+        </select>
+        <DateRangePicker
+          startDate={props.filters.startDate}
+          startDateId='startDateId'
+          endDate={props.filters.endDate}
+          endDateId='endDateId'
+          onDatesChange={onDatesChange}
+          focusedInput={calendarFocused}
+          onFocusChange={onFocusChange}
+          showClearDates={true}
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+        />
+      </div>
     </div>
   );
 

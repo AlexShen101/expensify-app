@@ -11,12 +11,14 @@ const Header = (props) => {
   return (
     <div className="header__bar">
 
-      <h1>Expensify</h1>
       {props.loggedIn &&
-        <div className="header__links">
-          <NavLink to="/dashboard" className="header__link" activeClassName="is-active" exact={true}>Dashboard</NavLink>
-          <NavLink to="/create" className="header_link" activeClassName="is-active">Create Expense</NavLink>
-          <button className="btn__no-padding btn__logout" onClick={logOut}>Log out</button>
+        <div>
+          <h1>Expensify</h1>
+          <div className="header__links">
+            <NavLink to="/dashboard" className="header__link" activeClassName="is-active" exact={true}>Dashboard</NavLink>
+            <NavLink to="/create" className="header_link" activeClassName="is-active">Create Expense</NavLink>
+            <button className="btn__no-padding btn__logout" onClick={logOut}>Log out</button>
+          </div>
         </div>
       }
     </div>

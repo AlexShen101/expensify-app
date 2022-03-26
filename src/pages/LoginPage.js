@@ -11,10 +11,10 @@ const LoginPage = (props) => {
     return (
         <div className="box-layout">
             <div className="box-layout__box">
+                <h1>Expensify</h1>
                 <h2>Please log into an account.</h2>
                 <button onClick={startLogin} className="btn btn__login btn--centered">Login</button>
             </div>
-
         </div>
     )
 }
